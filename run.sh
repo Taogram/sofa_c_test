@@ -1,0 +1,1 @@
+gcc nutation_test.c -IC:/cygwin64/home/75699/include/ -LC:/cygwin64/home/75699/lib/ -lsofa_c -lm -o t_t

@@ -1,0 +1,43 @@
+{
+	"version": "2.0.0",
+	"windows": {
+		"options": {
+			"shell": {
+				"executable": "cmd.exe",
+				"args": [
+					"/C",
+					"\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\VsDevCmd.bat\"",
+					"&&"
+				]
+			}
+		}
+	},
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C/C++: cl.exe build active file",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/I.\\src",
+				"/Fo:",
+				"${fileDirname}\\${fileBasenameNoExtension}.obj",
+				"/Fe:",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"${file}"
+			],
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+			"detail": "编译器: cl.exe"
+		}
+	]
+}
